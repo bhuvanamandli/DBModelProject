@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee-Data</title>
+    <link href="{% static 'css/mystyles.css' %}" rel="stylesheet"/>
+</head>
+<body>
+    <h1>Employee List</h1>
+    <hr/>
+    <br/>
+    <br/>
+    {% if emplist%}
+    <table border="10",width="550">
+    <caption>Employee-list:</caption>
+        <thead>
+            <tr>
+                <th>eno</th>
+                <th>ename</th>
+                <th>sal</th>
+                <th>addr</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for emp in emplist %}
+            <tr>
+                <td>{{ emp.eno }}</td>
+                <td>{{ emp.ename }}</td>
+                <td>{{ emp.esal }}</td>
+                <td>{{ emp.eaddr }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+        <p>Records Not Found</p>
+    {% endif %}
+</body>
+</html>

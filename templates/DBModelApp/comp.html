@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Company-data</title>
+    <link href="{% static 'css/mystyles2.css' %}" rel="stylesheet"/>
+</head>
+<body>
+    <h1>Company's-data</h1>
+    <hr/>
+    {% if complist %}
+        <table width="400" border="10">
+        <caption>Company-data</caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>No.OF EMP</th>
+                    <th>ADDRESS</th>
+                    <th>SHARE_VALUE</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for comp in complist %}
+                    <tr>
+                        <td>{{ comp.compid }}</td>
+                        <td>{{ comp.compname }}</td>
+                        <td>{{ comp.compemp }}</td>
+                        <td>{{ comp.compaddr }}</td>
+                        <td>{{ comp.compshrval }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Records Not Found</p>
+    {% endif %}
+</body>
+</html>

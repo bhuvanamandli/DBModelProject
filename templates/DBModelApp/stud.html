@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students-data</title>
+    <link href="{% static 'css/mystyles2.css' %}" rel="stylesheet"/>
+</head>
+<body>
+    <h1>Students-data</h1>
+    <hr/>
+    {% if studlist %}
+        <table width="400" border="10">
+        <caption>Student-data</caption>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>COURSE</th>
+                    <th>SUB1</th>
+                    <th>SUB2</th>
+                    <th>SUB3</th>
+                    <th>TOTAL</th>
+                    <th>AVG</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for stud in studlist %}
+                    <tr>
+                        <td>{{ stud.sno }}</td>
+                        <td>{{ stud.sname }}</td>
+                        <td>{{ stud.course }}</td>
+                        <td>{{ stud.sub1 }}</td>
+                        <td>{{ stud.sub2 }}</td>
+                        <td>{{ stud.sub3 }}</td>
+                        <td>{{ stud.total }}</td>
+                        <td>{{ stud.avg }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>Records Not Found</p>
+    {% endif %}
+</body>
+</html>

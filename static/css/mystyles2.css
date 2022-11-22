@@ -1,0 +1,23 @@
+h1{
+    color: red;
+    background-color: yellow;
+    border: 2px dashed brown;
+    text-align: center;
+}
+body{
+    background-color: lightcyan;
+}
+caption{
+    background-color: black;
+    color: aqua;
+    border: 2px dashed hotpink;
+    margin: auto;
+    font-size: 20px;
+    padding: 15px;
+}
+table{
+    background-color: bisque;
+    color: red;
+    padding: 10px;
+    border:10px groove pink;
+}
